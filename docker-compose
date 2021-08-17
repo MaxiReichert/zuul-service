@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  zuulService:
+    container_name: zuul-service
+    image: zuul-service:0.0.1-SNAPSHOT
+    ports:
+      - "8080:8080"
+    environment:
+      - "SPRING_PROFILES_ACTIVE=docker"
+    networks:
+      - network_tp
+
+networks:
+  network_tp:
+    driver: bridge
